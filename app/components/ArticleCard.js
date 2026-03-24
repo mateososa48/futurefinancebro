@@ -16,7 +16,7 @@ export default function ArticleCard({ article, large = false, compact = false })
         aspectRatio: large ? '2 / 1' : '3 / 2',
         overflow: 'hidden',
         backgroundColor: 'var(--bg-elevated)',
-        borderRadius: '8px',
+        borderRadius: '5px',
       }}>
         <img
           src={article.image}

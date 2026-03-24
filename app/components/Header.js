@@ -137,7 +137,7 @@ export default function Header() {
     }}>
       <header style={{
         backgroundColor: 'var(--bg-elevated)',
-        borderRadius: '8px',
+        borderRadius: '5px',
         transition: 'background-color 0.25s ease',
       }}>
 

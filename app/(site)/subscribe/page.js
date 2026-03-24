@@ -199,7 +199,7 @@ export default function SubscribePage() {
           <div style={{
             background: 'var(--bg-elevated)',
             padding: '40px',
-            borderRadius: '8px',
+            borderRadius: '5px',
           }}>
 
             {submitted ? (

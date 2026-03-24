@@ -120,7 +120,7 @@ export default async function ArticlePage({ params }) {
         width: '100%',
         aspectRatio: '2 / 1',
         overflow: 'hidden',
-        borderRadius: '8px',
+        borderRadius: '5px',
         backgroundColor: 'var(--bg-elevated)',
         margin: '40px 0',
       }}>
