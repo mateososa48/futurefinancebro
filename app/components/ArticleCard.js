@@ -1,0 +1,50 @@
+import Link from 'next/link'
+
+export default function ArticleCard({ article, large = false, compact = false }) {
+  return (
+    <Link href={article.href} style={{ display: 'block' }}>
+      <div style={{
+        width: '100%',
+        aspectRatio: large ? '2 / 1' : '3 / 2',
+        overflow: 'hidden',
+        backgroundColor: 'var(--bg-elevated)',
+        borderRadius: '8px',
+      }}>
+        <img
+          src={article.image}
+          alt={article.title}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        />
+      </div>
+
+      <div style={{ height: '1.5px', backgroundColor: 'var(--mint-text)', marginTop: '14px', borderRadius: '9999px' }} />
+
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '10px', paddingBottom: '9px' }}>
+        <span style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.09em', textTransform: 'uppercase', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)' }}>
+          {article.tag}
+        </span>
+        <span style={{ fontSize: '0.6875rem', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)', letterSpacing: '0.02em' }}>
+          {article.date}
+        </span>
+      </div>
+
+      <h2 style={{
+        fontFamily: 'var(--font-sentient)',
+        fontSize: large ? '1.625rem' : compact ? '0.9375rem' : '1.0625rem',
+        fontWeight: 500,
+        lineHeight: 1.28,
+        letterSpacing: '-0.02em',
+        color: 'var(--text-primary)',
+        marginBottom: compact ? 0 : '10px',
+      }}>
+        {article.title}
+      </h2>
+
+      {!compact && (
+        <p style={{ fontSize: '0.8125rem', lineHeight: 1.7, color: 'var(--text-secondary)', fontFamily: 'var(--font-alexandria)' }}>
+          {article.description}
+        </p>
+      )}
+    </Link>
+  )
+}

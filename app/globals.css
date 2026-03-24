@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/* ─── Sentient Font Faces ─── */
+@font-face {
+  font-family: 'Sentient';
+  src: url('/fonts/Sentient-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sentient';
+  src: url('/fonts/Sentient-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sentient';
+  src: url('/fonts/Sentient-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Light Mode (default) ─── */
+:root {
+  --bg:            #F8F8F5;
+  --bg-elevated:   #EFEFEB;
+  --text-primary:  #1A2440;
+  --text-secondary:#4E5A6E;
+  --text-muted:    #8E97A3;
+  --border:        #E0DED8;
+  --green-dark:    #1E3A28;
+  --mint:          #A8D5B5;
+  --mint-bg:       #EBF5EF;
+  --mint-text:     #21492F;
+}
+
+/* ─── Dark Mode ─── */
+[data-theme="dark"] {
+  --bg:            #0D0D0B;
+  --bg-elevated:   #181816;
+  --text-primary:  #EDEEE8;
+  --text-secondary:#8A8E84;
+  --text-muted:    #5A5E56;
+  --border:        #2A2C26;
+  --green-dark:    #2C4E38;
+  --mint:          #8FD4A8;
+  --mint-bg:       #172318;
+  --mint-text:     #B7E6C3;
+}
+
+/* ─── Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-alexandria), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ─── Responsive layout helpers ─── */
+.layout-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 32px;
+}
+
+.layout-split {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.layout-editorial-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.layout-editorial-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px 24px;
+}
+
+@media (max-width: 1024px) {
+  .layout-grid-3          { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
+  .layout-editorial-bottom { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .layout-split           { grid-template-columns: 1fr; }
+  .layout-editorial-top   { grid-template-columns: 1fr; }
+}
