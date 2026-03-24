@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import ArticleCard from '../../components/ArticleCard'
 import { getAllPosts } from '../../../sanity/lib/fetch'
 

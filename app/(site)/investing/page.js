@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import CategoryPage from '../../components/CategoryPage'
 import { getPostsByCategory } from '../../../sanity/lib/fetch'
 

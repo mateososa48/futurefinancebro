@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import HomeContent from '../components/HomeContent'
 import { getFeaturedPost, getRecentPosts } from '../../sanity/lib/fetch'
 

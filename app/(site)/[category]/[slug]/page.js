@@ -2,6 +2,8 @@ import Link from 'next/link'
 import ArticleCard from '../../../components/ArticleCard'
 import { getPostBySlug, getPostsByCategory } from '../../../../sanity/lib/fetch'
 
+export const dynamic = 'force-dynamic'
+
 const PLACEHOLDER_BODY = [
   {
     heading: null,
