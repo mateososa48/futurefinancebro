@@ -2,7 +2,14 @@ import Link from 'next/link'
 
 export default function ArticleCard({ article, large = false, compact = false }) {
   return (
-    <Link href={article.href} style={{ display: 'block' }}>
+    <Link href={article.href} style={{
+      display: 'block',
+      transform: 'translateY(0)',
+      transition: 'transform 0.25s cubic-bezier(0.25, 1, 0.5, 1)',
+    }}
+    onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-6px)'}
+    onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
+    >
       <div style={{
         width: '100%',
         aspectRatio: large ? '2 / 1' : '3 / 2',

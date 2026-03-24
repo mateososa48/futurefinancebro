@@ -41,7 +41,7 @@ export default function HomeContent({ featured, recent }) {
 
           {featured && (
           <div>
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ height: '24px', display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
               <SectionLabel>Featured</SectionLabel>
             </div>
             <ArticleCard article={featured} large />
@@ -49,7 +49,7 @@ export default function HomeContent({ featured, recent }) {
           )}
 
           <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+            <div style={{ height: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
               <SectionLabel>Recent</SectionLabel>
               <Link href="/recent" style={{ fontSize: '0.8125rem', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)' }}>
                 View all →
