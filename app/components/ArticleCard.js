@@ -29,13 +29,11 @@ export default function ArticleCard({ article, large = false, compact = false })
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '10px', paddingBottom: '9px' }}>
         <span style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.09em', textTransform: 'uppercase', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)' }}>
-          {article.tag}
+          {article.readingTime ? `${article.readingTime} min read` : article.tag}
         </span>
-        {article.readingTime && (
-          <span style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.09em', textTransform: 'uppercase', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)' }}>
-            {article.readingTime} min read
-          </span>
-        )}
+        <span style={{ fontSize: '0.6875rem', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)', letterSpacing: '0.02em' }}>
+          {article.date}
+        </span>
       </div>
 
       <h2 style={{
