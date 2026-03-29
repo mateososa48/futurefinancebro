@@ -27,7 +27,7 @@ export default function ArticleCard({ article, large = false, compact = false })
 
       <div style={{ height: '1.5px', backgroundColor: 'var(--mint-text)', marginTop: '14px', borderRadius: '9999px' }} />
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '10px', paddingBottom: '9px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '6px', paddingBottom: '9px' }}>
         <span style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.09em', textTransform: 'uppercase', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)' }}>
           {article.readingTime ? `${article.readingTime} min read` : article.tag}
         </span>
