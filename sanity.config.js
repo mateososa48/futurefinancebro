@@ -6,7 +6,7 @@ import { schemaTypes } from './sanity/schema'
 
 export default defineConfig({
   name: 'blog',
-  title: 'Futurefinancebro',
+  title: 'FutureFinanceBro',
 
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',

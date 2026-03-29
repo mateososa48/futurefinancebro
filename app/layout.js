@@ -20,13 +20,13 @@ const alexandria = Alexandria({
 })
 
 export const metadata = {
-  title: 'Futurefinancebro — Financial Intelligence',
+  title: 'FutureFinanceBro — Financial Intelligence',
   description: 'Independent financial analysis and commentary for investors, professionals, and curious minds.',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${sentient.variable} ${alexandria.variable}`}>
+    <html lang="en" data-theme="dark" className={`${sentient.variable} ${alexandria.variable}`}>
       <body>{children}<Analytics /></body>
     </html>
   )

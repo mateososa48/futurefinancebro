@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic'
 import ArticleCard from '../../components/ArticleCard'
 import { getAllPosts } from '../../../sanity/lib/fetch'
 
-export const metadata = { title: 'All Articles — Futurefinancebro' }
+export const metadata = { title: 'All Articles — FutureFinanceBro' }
 
 export default async function RecentPage() {
   const articles = await getAllPosts()
@@ -27,7 +27,7 @@ export default async function RecentPage() {
           fontFamily: 'var(--font-alexandria)',
           marginBottom: '20px',
         }}>
-          Futurefinancebro · All Articles
+          FutureFinanceBro · All Articles
         </p>
         <h1 style={{
           fontFamily: 'var(--font-sentient)',

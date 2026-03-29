@@ -22,7 +22,7 @@ export default function CategoryPage({ category, title, description, articles = 
           fontFamily: 'var(--font-alexandria)',
           marginBottom: '20px',
         }}>
-          Futurefinancebro · {title}
+          FutureFinanceBro · {title}
         </p>
 
         <h1 style={{

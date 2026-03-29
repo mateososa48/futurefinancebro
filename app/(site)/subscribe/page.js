@@ -156,7 +156,7 @@ export default function SubscribePage() {
             maxWidth: '400px',
             marginBottom: '48px',
           }}>
-            Futurefinancebro delivers clear, independent analysis of markets, the economy, and personal finance — straight to your inbox. No noise. No agenda. Just what matters.
+            FutureFinanceBro delivers clear, independent analysis of markets, the economy, and personal finance — straight to your inbox. No noise. No agenda. Just what matters.
           </p>
 
           {/* Benefits */}
@@ -226,7 +226,7 @@ export default function SubscribePage() {
                   lineHeight: 1.6,
                   marginBottom: '32px',
                 }}>
-                  Welcome to Futurefinancebro. Check your inbox for a confirmation — the first edition lands shortly.
+                  Welcome to FutureFinanceBro. Check your inbox for a confirmation — the first edition lands shortly.
                 </p>
                 <Link href="/" style={{
                   fontFamily: 'var(--font-alexandria)',
@@ -297,7 +297,7 @@ export default function SubscribePage() {
                   marginTop: '20px',
                   opacity: 0.7,
                 }}>
-                  By subscribing you agree to receive editorial emails from Futurefinancebro. We never share your information with third parties.
+                  By subscribing you agree to receive editorial emails from FutureFinanceBro. We never share your information with third parties.
                 </p>
 
                 {/* Social proof */}

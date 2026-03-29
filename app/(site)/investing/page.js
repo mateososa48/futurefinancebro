@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic'
 import CategoryPage from '../../components/CategoryPage'
 import { getPostsByCategory } from '../../../sanity/lib/fetch'
 
-export const metadata = { title: 'Investing — Futurefinancebro' }
+export const metadata = { title: 'Investing — FutureFinanceBro' }
 
 export default async function InvestingPage() {
   const articles = await getPostsByCategory('investing')

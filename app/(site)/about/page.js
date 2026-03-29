@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export const metadata = { title: 'About — Futurefinancebro' }
+export const metadata = { title: 'About — FutureFinanceBro' }
 
 const categories = [
   {
@@ -51,7 +51,7 @@ export default function AboutPage() {
           fontFamily: 'var(--font-alexandria)',
           marginBottom: '20px',
         }}>
-          About Futurefinancebro
+          About FutureFinanceBro
         </p>
         <h1 style={{
           fontFamily: 'var(--font-sentient)',
@@ -72,7 +72,7 @@ export default function AboutPage() {
           fontFamily: 'var(--font-alexandria)',
           maxWidth: '560px',
         }}>
-          Futurefinancebro publishes clear, rigorous analysis of markets, the economy, and personal finance — without the noise, without the agenda. We write for people who want to understand, not just react.
+          FutureFinanceBro publishes clear, rigorous analysis of markets, the economy, and personal finance — without the noise, without the agenda. We write for people who want to understand, not just react.
         </p>
       </section>
 
@@ -108,7 +108,7 @@ export default function AboutPage() {
               Most financial media is built around urgency — the breaking story, the hot trade, the market move you can&apos;t afford to miss. We think that model works against readers. Short-term noise drowns out the long-term signals that actually matter.
             </p>
             <p style={{ fontSize: '0.9375rem', lineHeight: 1.8, color: 'var(--text-secondary)', fontFamily: 'var(--font-alexandria)', marginBottom: '20px' }}>
-              Futurefinancebro is built around a different premise: that readers are best served by analysis that takes time to be right rather than content that races to be first. We publish fewer pieces than most, but we hold each one to a higher standard.
+              FutureFinanceBro is built around a different premise: that readers are best served by analysis that takes time to be right rather than content that races to be first. We publish fewer pieces than most, but we hold each one to a higher standard.
             </p>
             <p style={{ fontSize: '0.9375rem', lineHeight: 1.8, color: 'var(--text-secondary)', fontFamily: 'var(--font-alexandria)' }}>
               Every piece we publish asks a simple question: does this help the reader make better financial decisions? If the answer isn&apos;t clearly yes, it doesn&apos;t run.
@@ -207,7 +207,7 @@ export default function AboutPage() {
           letterSpacing: '0.02em',
           cursor: 'pointer',
         }}>
-          Subscribe to Futurefinancebro
+          Subscribe to FutureFinanceBro
         </button>
       </section>
     </main>

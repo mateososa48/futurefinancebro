@@ -95,7 +95,7 @@ export default async function ArticlePage({ params }) {
 
         <h1 style={{
           fontFamily: 'var(--font-sentient)',
-          fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
+          fontSize: 'clamp(2rem, 4.5vw, 3.25rem)',
           fontWeight: 400,
           lineHeight: 1.1,
           letterSpacing: '-0.03em',
@@ -106,8 +106,8 @@ export default async function ArticlePage({ params }) {
         </h1>
 
         <p style={{
-          fontSize: '1rem',
-          lineHeight: 1.75,
+          fontSize: '1.125rem',
+          lineHeight: 1.8,
           color: 'var(--text-secondary)',
           fontFamily: 'var(--font-alexandria)',
         }}>
@@ -149,11 +149,11 @@ export default async function ArticlePage({ params }) {
               </h2>
             )}
             <p style={{
-              fontSize: '1rem',
+              fontSize: '1.0625rem',
               lineHeight: 1.8,
               color: 'var(--text-secondary)',
               fontFamily: 'var(--font-alexandria)',
-              marginBottom: '24px',
+              marginBottom: '32px',
             }}>
               {block.text}
             </p>

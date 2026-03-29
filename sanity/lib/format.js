@@ -1,5 +1,22 @@
 import { urlFor } from './image'
 
+function estimateReadingTime(body, excerpt) {
+  let wordCount = 0
+  if (body && Array.isArray(body)) {
+    for (const block of body) {
+      if (block._type === 'block' && Array.isArray(block.children)) {
+        for (const span of block.children) {
+          if (span.text) wordCount += span.text.split(/\s+/).filter(Boolean).length
+        }
+      }
+    }
+  }
+  if (wordCount === 0 && excerpt) {
+    wordCount = excerpt.split(/\s+/).filter(Boolean).length
+  }
+  return Math.max(1, Math.ceil(wordCount / 238))
+}
+
 const CATEGORY_TAGS = {
   markets: 'MARKETS',
   investing: 'INVESTING',
@@ -31,5 +48,6 @@ export function formatPost(post) {
     href: `/${post.category}/${slugValue}`,
     slug: slugValue,
     body: post.body || null,
+    readingTime: estimateReadingTime(post.body, post.excerpt),
   }
 }

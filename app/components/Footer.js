@@ -97,7 +97,7 @@ export default function Footer() {
             color: 'var(--text-primary)',
             whiteSpace: 'nowrap',
           }}>
-            Futurefinancebro
+            FutureFinanceBro
           </Link>
         </div>
 
@@ -116,7 +116,7 @@ export default function Footer() {
             color: 'var(--text-muted)',
             letterSpacing: '0.02em',
           }}>
-            © 2026 Futurefinancebro
+            © 2026 FutureFinanceBro
           </span>
 
           <nav style={{ display: 'flex', flexWrap: 'wrap', gap: '4px 24px' }}>

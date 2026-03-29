@@ -1,11 +1,11 @@
 // Newest published post (the featured article)
 export const FEATURED_POST_QUERY = `*[_type == "post"] | order(publishedAt desc)[0]{
-  _id, title, slug, category, publishedAt, mainImage, excerpt
+  _id, title, slug, category, publishedAt, mainImage, excerpt, body
 }`
 
 // Posts 2–7 (skip the featured one), used on homepage
 export const RECENT_POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc)[1..6]{
-  _id, title, slug, category, publishedAt, mainImage, excerpt
+  _id, title, slug, category, publishedAt, mainImage, excerpt, body
 }`
 
 // All posts, newest first

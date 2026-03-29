@@ -32,13 +32,13 @@ export default function ArticleCard({ article, large = false, compact = false })
           {article.tag}
         </span>
         <span style={{ fontSize: '0.6875rem', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)', letterSpacing: '0.02em' }}>
-          {article.date}
+          {article.date}{article.readingTime ? ` · ${article.readingTime} min read` : ''}
         </span>
       </div>
 
       <h2 style={{
         fontFamily: 'var(--font-sentient)',
-        fontSize: large ? '1.625rem' : compact ? '0.9375rem' : '1.0625rem',
+        fontSize: large ? '1.625rem' : compact ? '0.9375rem' : '1.125rem',
         fontWeight: 500,
         lineHeight: 1.28,
         letterSpacing: '-0.02em',
@@ -49,7 +49,7 @@ export default function ArticleCard({ article, large = false, compact = false })
       </h2>
 
       {!compact && (
-        <p style={{ fontSize: '0.8125rem', lineHeight: 1.7, color: 'var(--text-secondary)', fontFamily: 'var(--font-alexandria)' }}>
+        <p style={{ fontSize: '0.8125rem', lineHeight: 1.75, color: 'var(--text-secondary)', fontFamily: 'var(--font-alexandria)' }}>
           {article.description}
         </p>
       )}
