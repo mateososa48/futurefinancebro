@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useTheme } from './ThemeProvider'
 
@@ -38,6 +38,13 @@ function MoonIcon() {
 export default function Header() {
   const { isDark, toggle, mounted } = useTheme()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>
@@ -113,14 +120,32 @@ export default function Header() {
         padding: 14px 24px;
         font-size: 1rem;
         font-family: var(--font-sentient);
-        font-weight: 400;
-        color: var(--text-secondary);
+        font-weight: 500;
+        color: var(--text-primary);
         letter-spacing: -0.01em;
         border-top: 1px solid var(--border);
         transition: color 0.2s ease;
       }
       .mobile-nav-link:hover {
         color: var(--mint-text);
+      }
+
+      .site-header {
+        background-color: var(--bg);
+        border-radius: 9999px;
+        border: 1px solid transparent;
+        transition: border-color 0.3s ease, background-color 0.25s ease;
+      }
+
+      .site-header.scrolled {
+        border-color: var(--scroll-border);
+      }
+
+      :root {
+        --scroll-border: #1E3A28;
+      }
+      [data-theme="dark"] {
+        --scroll-border: #8FD4A8;
       }
     `}</style>
 
@@ -130,19 +155,15 @@ export default function Header() {
       left: '50%',
       transform: 'translateX(-50%)',
       width: 'calc(100% - 48px)',
-      maxWidth: '1152px',
+      maxWidth: '780px',
       zIndex: 50,
     }}>
-      <header style={{
-        backgroundColor: 'var(--bg-elevated)',
-        borderRadius: '5px',
-        transition: 'background-color 0.25s ease',
-      }}>
+      <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
 
         {/* Top bar */}
         <div style={{
           padding: '0 24px',
-          height: '56px',
+          height: '52px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -153,7 +174,7 @@ export default function Header() {
           <Link href="/" style={{
             fontFamily: 'var(--font-sentient)',
             fontSize: '1.1rem',
-            fontWeight: 500,
+            fontWeight: 600,
             letterSpacing: '-0.02em',
             color: 'var(--text-primary)',
             flexShrink: 0,
@@ -169,9 +190,10 @@ export default function Header() {
                 href={link.href}
                 className="nav-flip"
                 style={{
-                  fontSize: '0.8125rem',
-                  color: 'var(--text-secondary)',
-                  letterSpacing: '0.005em',
+                  fontSize: '0.875rem',
+                  fontWeight: 600,
+                  color: 'var(--text-primary)',
+                  letterSpacing: '-0.01em',
                   whiteSpace: 'nowrap',
                 }}
               >
