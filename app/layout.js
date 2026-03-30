@@ -26,7 +26,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="dark" className={`${sentient.variable} ${alexandria.variable}`}>
+    <html lang="en" className={`${sentient.variable} ${alexandria.variable}`}>
       <body>{children}<Analytics /></body>
     </html>
   )
