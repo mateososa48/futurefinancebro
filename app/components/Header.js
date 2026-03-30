@@ -133,19 +133,12 @@ export default function Header() {
       .site-header {
         background-color: var(--bg);
         border-radius: 9999px;
-        border: 1px solid transparent;
+        border: 0.5px solid transparent;
         transition: border-color 0.3s ease, background-color 0.25s ease;
       }
 
       .site-header.scrolled {
-        border-color: var(--scroll-border);
-      }
-
-      :root {
-        --scroll-border: #1E3A28;
-      }
-      [data-theme="dark"] {
-        --scroll-border: #8FD4A8;
+        border-color: var(--text-primary);
       }
     `}</style>
 
@@ -162,7 +155,7 @@ export default function Header() {
 
         {/* Top bar */}
         <div style={{
-          padding: '0 24px',
+          padding: '0 8px 0 20px',
           height: '52px',
           display: 'flex',
           alignItems: 'center',
@@ -191,8 +184,8 @@ export default function Header() {
                 className="nav-flip"
                 style={{
                   fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: 'var(--text-primary)',
+                  fontWeight: 500,
+                  color: 'var(--text-secondary)',
                   letterSpacing: '-0.01em',
                   whiteSpace: 'nowrap',
                 }}
@@ -214,7 +207,7 @@ export default function Header() {
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
-                color: 'var(--text-muted)',
+                color: 'var(--text-secondary)',
                 width: '32px',
                 height: '32px',
                 display: 'flex',
@@ -235,8 +228,8 @@ export default function Header() {
                 color: '#FFFFFF',
                 fontSize: '0.8125rem',
                 fontWeight: 500,
-                padding: '7px 18px',
-                borderRadius: '100px',
+                padding: '9px 16px',
+                borderRadius: '9999px',
                 letterSpacing: '0.01em',
                 transition: 'opacity 0.15s ease',
               }}
