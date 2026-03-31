@@ -13,20 +13,7 @@ export default async function HomePage() {
       {/* Hero */}
       <section style={{
         padding: '60px 0 10px',
-        borderBottom: '1px solid var(--border)',
       }}>
-        <p style={{
-          fontSize: '0.6875rem',
-          fontWeight: 600,
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          color: 'var(--mint-text)',
-          fontFamily: 'var(--font-alexandria)',
-          marginBottom: '20px',
-        }}>
-          Tagline here
-        </p>
-
         <h1 style={{
           fontFamily: 'var(--font-sentient)',
           fontSize: 'clamp(2.25rem, 5vw, 3.75rem)',
@@ -37,11 +24,12 @@ export default async function HomePage() {
           maxWidth: '680px',
           marginBottom: '24px',
         }}>
-          FutureFinanceBro<br />By Advik Mavuri
+          <span style={{ color: 'var(--mint-text)' }}>FutureFinanceBro</span><br />By Advik Mavuri
         </h1>
 
         <p style={{
-          fontSize: '0.8125rem',
+          fontSize: '0.9375rem',
+          fontWeight: 500,
           color: 'var(--text-muted)',
           fontFamily: 'var(--font-alexandria)',
           letterSpacing: '0.03em',
