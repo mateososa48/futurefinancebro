@@ -71,7 +71,7 @@ export default function HomeContent({ featured, recent }) {
                 </Link>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '36px 24px' }}>
-                {recent.slice(0, 6).map((article, i) => <ArticleCard key={i} article={article} />)}
+                {recent.slice(0, 4).map((article, i) => <ArticleCard key={i} article={article} />)}
               </div>
             </div>
           )}
