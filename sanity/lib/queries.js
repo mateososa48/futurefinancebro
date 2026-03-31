@@ -4,7 +4,7 @@ export const FEATURED_POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc
 }`
 
 // All posts after the first 2 (shown in recent)
-export const RECENT_POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc)[2..]{
+export const RECENT_POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc)[2..100]{
   _id, title, slug, publishedAt, mainImage, excerpt, body
 }`
 
