@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import ArticleCard from './ArticleCard'
 
@@ -77,6 +78,28 @@ export default function HomeContent({ featured, recent }) {
           )}
 
         </div>
+
+        <div style={{ textAlign: 'center', marginTop: '48px' }}>
+          <Link href="/recent" style={{
+            display: 'inline-block',
+            border: '1px solid var(--text-primary)',
+            color: 'var(--text-primary)',
+            fontFamily: 'var(--font-alexandria)',
+            fontSize: '0.8125rem',
+            fontWeight: 500,
+            letterSpacing: '0.04em',
+            textTransform: 'uppercase',
+            padding: '12px 32px',
+            borderRadius: '9999px',
+            transition: 'background-color 0.2s ease, color 0.2s ease',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.backgroundColor = 'var(--text-primary)'; e.currentTarget.style.color = 'var(--bg)' }}
+          onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--text-primary)' }}
+          >
+            View all articles
+          </Link>
+        </div>
+
       </section>
     </>
   )
