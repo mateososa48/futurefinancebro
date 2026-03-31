@@ -17,25 +17,17 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'category',
-      title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Markets', value: 'markets' },
-          { title: 'Investing', value: 'investing' },
-          { title: 'Economy', value: 'economy' },
-          { title: 'Personal Finance', value: 'personal-finance' },
-        ],
-        layout: 'radio',
-      },
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'publishedAt',
       title: 'Published At',
       type: 'datetime',
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      description: 'Pin this post as the featured article on the homepage.',
+      initialValue: false,
     },
     {
       name: 'mainImage',
@@ -81,7 +73,7 @@ export default {
     select: {
       title: 'title',
       media: 'mainImage',
-      subtitle: 'category',
+      subtitle: 'publishedAt',
     },
   },
 }

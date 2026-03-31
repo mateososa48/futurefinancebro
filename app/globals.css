@@ -28,8 +28,10 @@
 /* ─── Light Mode (default) ─── */
 :root {
   --bg:            #F8F8F5;
+  --bg-dark:       #efefe7;
   --bg-elevated:   #EFEFEB;
-  --text-primary:  #1A2440;
+  --text-primary:  #02050d;
+  /*--text-primary:  #1A2440;*/
   --text-secondary:#4E5A6E;
   --text-muted:    #8E97A3;
   --border:        #E0DED8;
@@ -42,7 +44,8 @@
 /* ─── Dark Mode ─── */
 [data-theme="dark"] {
   --bg:            #0D0D0B;
-  --bg-elevated:   #181816;
+  --bg-dark:       #121210;
+  --bg-elevated:   #2a2a2a;
   --text-primary:  #EDEEE8;
   --text-secondary:#8A8E84;
   --text-muted:    #5A5E56;

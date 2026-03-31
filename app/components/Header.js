@@ -138,7 +138,8 @@ export default function Header() {
       }
 
       .site-header.scrolled {
-        border-color: var(--text-primary);
+        border-color: var(--bg-dark);
+        background-color: var(--bg-dark);
       }
     `}</style>
 
@@ -167,7 +168,7 @@ export default function Header() {
           <Link href="/" style={{
             fontFamily: 'var(--font-sentient)',
             fontSize: '1.1rem',
-            fontWeight: 600,
+            fontWeight: 450,
             letterSpacing: '-0.02em',
             color: 'var(--text-primary)',
             flexShrink: 0,

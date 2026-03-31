@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import ArticleCard from '../../../components/ArticleCard'
-import { getPostBySlug, getPostsByCategory } from '../../../../sanity/lib/fetch'
+import { getPostBySlug, getAllPosts } from '../../../../sanity/lib/fetch'
 
 export const dynamic = 'force-dynamic'
 
@@ -23,27 +23,16 @@ const PLACEHOLDER_BODY = [
   },
   {
     heading: null,
-    text: 'Consumer spending data tells a similarly complex story. Aggregate spending has held up better than the headlines about consumer confidence surveys would suggest. But the composition of that spending has shifted: lower-income households, who depleted their pandemic-era savings earlier, have pulled back on discretionary purchases, while higher-income households — buoyed by financial asset appreciation — have continued spending freely. This bifurcation makes aggregate data harder to interpret.',
+    text: 'Consumer spending data tells a similarly complex story. Aggregate spending has held up better than the headlines about consumer confidence surveys would suggest. But the composition of that spending has shifted: lower-income households, who depleted their pandemic-era savings earlier, have pulled back on discretionary purchases, while higher-income households — buoyed by financial asset appreciation — have continued spending freely.',
   },
   {
     heading: 'Implications for Investors',
-    text: 'For investors, the current environment calls for a clear-eyed assessment of where risks and opportunities actually lie rather than a reliance on broad market narratives. Duration risk in fixed income deserves particular attention: if rates remain elevated longer than the market currently prices in, long-duration bonds will face continued pressure. Conversely, short-duration instruments now offer yields that look attractive relative to their historical range, providing a real alternative to equities for the first time in years.',
-  },
-  {
-    heading: null,
-    text: 'Equity investors face a more differentiated landscape. The broad index has been carried by a narrow group of large-cap technology companies whose earnings growth has justified elevated multiples, at least for now. The rest of the market — smaller companies, value stocks, international equities — trades at significantly more modest valuations. Whether that discount represents an opportunity or a value trap depends heavily on where the economy goes from here and how long rates stay elevated.',
+    text: 'For investors, the current environment calls for a clear-eyed assessment of where risks and opportunities actually lie rather than a reliance on broad market narratives. Duration risk in fixed income deserves particular attention: if rates remain elevated longer than the market currently prices in, long-duration bonds will face continued pressure.',
   },
 ]
 
-const CATEGORY_LABELS = {
-  markets: 'Markets',
-  investing: 'Investing',
-  economy: 'Economy',
-  'personal-finance': 'Personal Finance',
-}
-
 export default async function ArticlePage({ params }) {
-  const { category, slug } = await params
+  const { slug } = await params
   const article = await getPostBySlug(slug)
 
   if (!article) {
@@ -59,9 +48,8 @@ export default async function ArticlePage({ params }) {
     )
   }
 
-  const categoryLabel = CATEGORY_LABELS[article.category] || article.category
-  const allInCategory = await getPostsByCategory(article.category)
-  const related = allInCategory.filter(a => a.slug !== article.slug).slice(0, 3)
+  const allPosts = await getAllPosts()
+  const related = allPosts.filter(a => a.slug !== article.slug).slice(0, 3)
 
   return (
     <main style={{ maxWidth: '1152px', margin: '0 auto', padding: '0 24px' }}>
@@ -75,16 +63,16 @@ export default async function ArticlePage({ params }) {
       <nav style={{ padding: '28px 0 0', display: 'flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font-alexandria)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
         <Link href="/" style={{ color: 'var(--text-muted)' }}>Home</Link>
         <span>/</span>
-        <Link href={`/${article.category}`} style={{ color: 'var(--text-muted)' }}>{categoryLabel}</Link>
+        <Link href="/recent" style={{ color: 'var(--text-muted)' }}>All Blogs</Link>
         <span>/</span>
         <span style={{ color: 'var(--text-secondary)' }}>{article.title}</span>
       </nav>
 
       {/* Article header */}
       <section style={{ maxWidth: '720px', padding: '40px 0 0' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0' }}>
-          <span style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.09em', textTransform: 'uppercase', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)' }}>
-            {article.tag}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={{ fontSize: '0.6875rem', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)', letterSpacing: '0.02em' }}>
+            {article.readingTime} min read
           </span>
           <span style={{ fontSize: '0.6875rem', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)' }}>
             {article.date}
@@ -131,7 +119,7 @@ export default async function ArticlePage({ params }) {
         />
       </div>
 
-      {/* Article body (placeholder until Portable Text is added) */}
+      {/* Article body */}
       <article style={{ maxWidth: '720px', paddingBottom: '72px' }}>
         {PLACEHOLDER_BODY.map((block, i) => (
           <div key={i}>
@@ -173,7 +161,7 @@ export default async function ArticlePage({ params }) {
               color: 'var(--text-primary)',
               fontFamily: 'var(--font-sentient)',
             }}>
-              More from {categoryLabel}
+              More articles
             </span>
           </div>
           <div className="article-related">

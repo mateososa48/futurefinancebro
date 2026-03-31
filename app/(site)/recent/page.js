@@ -38,7 +38,7 @@ export default async function RecentPage() {
           color: 'var(--text-primary)',
           maxWidth: '680px',
         }}>
-          Everything we&apos;ve published.
+          Everything I&apos;ve published.
         </h1>
       </section>
 

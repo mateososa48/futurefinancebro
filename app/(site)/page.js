@@ -12,7 +12,7 @@ export default async function HomePage() {
 
       {/* Hero */}
       <section style={{
-        padding: '60px 0 52px',
+        padding: '60px 0 10px',
         borderBottom: '1px solid var(--border)',
       }}>
         <p style={{
@@ -37,7 +37,7 @@ export default async function HomePage() {
           maxWidth: '680px',
           marginBottom: '24px',
         }}>
-          Big idea here.<br />Second line here.
+          FutureFinanceBro<br />By Advik Mavuri
         </h1>
 
         <p style={{
@@ -46,7 +46,7 @@ export default async function HomePage() {
           fontFamily: 'var(--font-alexandria)',
           letterSpacing: '0.03em',
         }}>
-          Supporting line here.
+          My personal portfolio blog about all things Finance.
         </p>
       </section>
 

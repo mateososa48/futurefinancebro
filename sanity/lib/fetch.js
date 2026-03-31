@@ -4,7 +4,6 @@ import {
   FEATURED_POST_QUERY,
   RECENT_POSTS_QUERY,
   POSTS_QUERY,
-  POSTS_BY_CATEGORY_QUERY,
   POST_BY_SLUG_QUERY,
 } from './queries'
 
@@ -23,12 +22,6 @@ export async function getRecentPosts() {
 export async function getAllPosts() {
   if (!client) return []
   const posts = await client.fetch(POSTS_QUERY)
-  return posts.map(formatPost)
-}
-
-export async function getPostsByCategory(category) {
-  if (!client) return []
-  const posts = await client.fetch(POSTS_BY_CATEGORY_QUERY, { category })
   return posts.map(formatPost)
 }
 
