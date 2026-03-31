@@ -1,13 +1,10 @@
-// Manually featured post, or newest if none is pinned
-export const FEATURED_POST_QUERY = `coalesce(
-  *[_type == "post" && featured == true] | order(publishedAt desc)[0],
-  *[_type == "post"] | order(publishedAt desc)[0]
-){
-  _id, title, slug, publishedAt, featured, mainImage, excerpt, body
+// Always the 2 newest posts for the featured section
+export const FEATURED_POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc)[0..1]{
+  _id, title, slug, publishedAt, mainImage, excerpt, body
 }`
 
-// Recent posts excluding the featured one
-export const RECENT_POSTS_QUERY = `*[_type == "post" && featured != true] | order(publishedAt desc)[0..5]{
+// All posts after the first 2 (shown in recent)
+export const RECENT_POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc)[2..]{
   _id, title, slug, publishedAt, mainImage, excerpt, body
 }`
 

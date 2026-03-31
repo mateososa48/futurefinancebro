@@ -1,16 +1,16 @@
 import { client } from './client'
 import { formatPost } from './format'
 import {
-  FEATURED_POST_QUERY,
+  FEATURED_POSTS_QUERY,
   RECENT_POSTS_QUERY,
   POSTS_QUERY,
   POST_BY_SLUG_QUERY,
 } from './queries'
 
-export async function getFeaturedPost() {
-  if (!client) return null
-  const post = await client.fetch(FEATURED_POST_QUERY)
-  return formatPost(post)
+export async function getFeaturedPosts() {
+  if (!client) return []
+  const posts = await client.fetch(FEATURED_POSTS_QUERY)
+  return posts.map(formatPost)
 }
 
 export async function getRecentPosts() {

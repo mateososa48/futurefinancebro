@@ -17,7 +17,10 @@ function SectionLabel({ children }) {
 }
 
 export default function HomeContent({ featured, recent }) {
-  if (!featured && (!recent || recent.length === 0)) {
+  const hasFeatured = featured && featured.length > 0
+  const hasRecent = recent && recent.length > 0
+
+  if (!hasFeatured && !hasRecent) {
     return (
       <section style={{ padding: '48px 0 80px' }}>
         <p style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-alexandria)', fontSize: '0.9375rem' }}>
@@ -30,37 +33,46 @@ export default function HomeContent({ featured, recent }) {
   return (
     <>
       <style>{`
-        .lc-split { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; }
+        .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+        .recent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 24px; }
         @media (max-width: 860px) {
-          .lc-split { grid-template-columns: 1fr; }
+          .featured-grid { grid-template-columns: 1fr; }
+          .recent-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 560px) {
+          .recent-grid { grid-template-columns: 1fr; }
         }
       `}</style>
 
-      <section style={{ padding: '48px 0 80px' }}>
-        <div className="lc-split">
+      <section style={{ padding: '48px 0 80px', display: 'flex', flexDirection: 'column', gap: '56px' }}>
 
-          {featured && (
+        {hasFeatured && (
           <div>
             <div style={{ height: '24px', display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-              <SectionLabel>Featured</SectionLabel>
+              <SectionLabel>Latest</SectionLabel>
             </div>
-            <ArticleCard article={featured} large />
+            <div className="featured-grid">
+              {featured.map((article, i) => (
+                <ArticleCard key={i} article={article} large />
+              ))}
+            </div>
           </div>
-          )}
+        )}
 
+        {hasRecent && (
           <div>
             <div style={{ height: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-              <SectionLabel>Recent</SectionLabel>
+              <SectionLabel>More</SectionLabel>
               <Link href="/recent" style={{ fontSize: '0.8125rem', color: 'var(--mint-text)', fontFamily: 'var(--font-alexandria)' }}>
                 View all →
               </Link>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '36px 24px' }}>
-              {recent.slice(0, 4).map((article, i) => <ArticleCard key={i} article={article} />)}
+            <div className="recent-grid">
+              {recent.map((article, i) => <ArticleCard key={i} article={article} />)}
             </div>
           </div>
+        )}
 
-        </div>
       </section>
     </>
   )
